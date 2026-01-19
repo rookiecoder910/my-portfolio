@@ -33,9 +33,9 @@
     <div class="glow glow-two"></div>
     <div class="relative">
         <header class="max-w-6xl mx-auto px-6 pt-8 pb-4">
-            <nav class="flex flex-wrap items-center justify-between gap-4">
-                <a class="font-display tracking-[0.2em] text-sm text-slate-300 uppercase" href="#hero">Manas Portfolio</a>
-                <div class="flex flex-wrap items-center gap-6 text-sm uppercase tracking-widest text-slate-400">
+            <nav class="nav-shell flex flex-wrap items-center justify-between gap-4">
+                <a class="nav-brand" href="#hero">Manas Portfolio</a>
+                <div class="nav-links flex flex-wrap items-center gap-6 text-sm uppercase tracking-widest">
                     <a href="#about" class="hover:text-accent">About</a>
                     <a href="#experience" class="hover:text-accent">Experience</a>
                     <a href="#projects" class="hover:text-accent">Projects</a>
@@ -52,11 +52,11 @@
         <main class="max-w-6xl mx-auto px-6 space-y-32 pb-24" id="hero">
             <section class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
                 <div class="space-y-8">
-                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Product Engineer · Mobile · Cloud</p>
-                    <h1 class="text-4xl lg:text-6xl font-display leading-tight text-white">
-                        Shipping bold software that feels crafted, from whiteboard to published app.
+                    <p class="hero-pill">Product Engineer · Mobile · Cloud</p>
+                    <h1 class="hero-title">
+                        Building <span class="text-glow">bold software</span> that feels <span class="text-glow">crafted</span>, from whiteboard to published app.
                     </h1>
-                    <p class="text-slate-300 text-lg">
+                    <p class="hero-subhead">
                         I design, build, and launch resilient products across web and Android. With a background in product strategy and mobile-first experiences, I turn ambiguous briefs into measurable releases.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -65,14 +65,14 @@
                         <a href="resume-14jan.pdf" class="btn-ghost" download>Latest Resume</a>
                         <a href="#apps" class="btn-link">Add new release →</a>
                     </div>
-                    <dl class="grid grid-cols-2 gap-6">
-                        <div>
-                            <dt class="text-sm text-slate-400">Products shipped</dt>
-                            <dd class="text-3xl font-display">24</dd>
+                    <dl class="metric-grid">
+                        <div class="metric-card">
+                            <dt>Linkedin Connections</dt>
+                            <dd>1100</dd>
                         </div>
-                        <div>
-                            <dt class="text-sm text-slate-400">Users impacted</dt>
-                            <dd class="text-3xl font-display">1.1M+</dd>
+                        <div class="metric-card">
+                            <dt>Github Followers</dt>
+                            <dd>10</dd>
                         </div>
                     </dl>
                 </div>
@@ -97,7 +97,7 @@
             <section id="about" class="grid gap-10 lg:grid-cols-2 items-start">
                 <div class="space-y-6">
                     <p class="eyebrow">Profile</p>
-                    <h2 class="section-title">Strategy + Design + Engineering</h2>
+                    <h2 class="section-title">My Strengths </h2>
                     <p class="text-lg text-slate-300">
                         From startup MVPs to enterprise-scale rollouts, I own the product surface end-to-end: discovery workshops, design systems, architecture, analytics loops, and GTM playbooks.
                     </p>
@@ -132,7 +132,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="eyebrow">Experience</p>
-                        <h2 class="section-title">Road-tested delivery</h2>
+                        <h2 class="section-title">Career Highlights</h2>
                     </div>
                     <a href="resume-14jan.pdf" class="btn-link">Download my resume PDF</a>
                 </div>
@@ -161,8 +161,8 @@
                         <span>Maintaining open-source Android projects totaling 500+ GitHub views.</span>
                     </li>
                     <li>
-                        <strong>50+ GSSOC commits </strong>
-                        <span>Actively pushing features, docs, and bug fixes to community repos.</span>
+                        <strong>50+ GSSOC'25 commits </strong>
+                        <span>Contributed to various open-source projects during the GirlScript Summer of Code 2025.</span>
                     </li>
                 </ul>
             </section>
@@ -171,7 +171,7 @@
                 <div class="flex items-center justify-between flex-wrap gap-6">
                     <div>
                         <p class="eyebrow">Capabilities</p>
-                        <h2 class="section-title">Tooling & tech I deploy</h2>
+                        <h2 class="section-title">My Techinical Background </h2>
                     </div>
                     <div class="flex gap-3 text-sm text-slate-400">
                         <span>Cloud native</span>
@@ -186,7 +186,8 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <p class="eyebrow">Selected Work</p>
-                        <h2 class="section-title">Case studies & experiments</h2>
+                        <h2 class="section-title">Campus-born solutions & prototypes</h2>
+                        <p class="text-slate-300 mt-2 text-base">A collection of college-built products tackling real problems—from health access to agri analytics—each crafted end-to-end and validated with peers.</p>
                     </div>
                     <button id="projectFilter" class="btn-ghost">Filter by impact</button>
                 </div>
@@ -199,7 +200,7 @@
                         <p class="eyebrow">App Shelf</p>
                         <h2 class="section-title">APK links & release notes</h2>
                     </div>
-                    <a href="#apps" class="btn-primary">Submit new APK</a>
+                    <a href="https://drive.google.com/drive/folders/1IXSiYtwiXdU_xFhfpRPOF9hvLW_TQkvp?dmr=1&amp;ec=wgc-drive-globalnav-goto" class="btn-primary" target="_blank" rel="noreferrer">All Apps Download via Drive </a>
                 </div>
                 <div id="appShelf" class="app-grid"></div>
             </section>
@@ -207,12 +208,12 @@
             <section class="cta-panel" id="cta">
                 <div class="space-y-4">
                     <p class="eyebrow">Advisory & Sprint Zero</p>
-                    <h2 class="text-3xl font-display">Need a strategic partner for your next launch?</h2>
-                    <p class="text-slate-300 max-w-2xl">I offer design-led audits, feature accelerators, and embedded build teams. Slide in the deck, share metrics, and we will shape a delivery plan within 72 hours.</p>
+                    <h2 class="text-3xl font-display">Need a strategic partner to launch your next product?</h2>
+                    <p class="text-slate-300 max-w-2xl">Share a snapshot of your problem space, ideal outcome, and timeline—we'll map the sprint plan together.</p>
                 </div>
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact" class="btn-primary">Start a sprint</a>
-                    <a href="mailto:hello@example.com" class="btn-ghost">Send brief</a>
+                    <a href="mailto:manasydv123@gmail.com" class="btn-ghost">Send brief</a>
                 </div>
             </section>
 
@@ -224,7 +225,7 @@
                     <div class="space-y-3 text-sm text-slate-400">
                         <p>Work From Home </p>
                         <p>Email: manasydv123@gmail.com</p>
-                        <p>Calendly: calendly.com/your-handle</p>
+                        <p>Contact: +918287190138</p>
                     </div>
                 </div>
                 <form class="card glass p-8 space-y-6" id="contactForm">

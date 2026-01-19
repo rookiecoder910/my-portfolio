@@ -22,22 +22,50 @@ const skills = [
     {
         label: "Languages",
         depth: "Polyglot systems",
-        stack: ["C", "C++", "Python", "JavaScript", "Java", "Kotlin"],
+        stack: [
+            { name: "C", icon: "https://cdn.simpleicons.org/c/00599C" },
+            { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
+            { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
+            { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+            { name: "Java", icon: "https://cdn.simpleicons.org/openjdk/EA2D2E" },
+            { name: "Kotlin", icon: "https://cdn.simpleicons.org/kotlin/7F52FF" },
+        ],
     },
     {
         label: "Android & SaaS",
         depth: "App architecture",
-        stack: ["Kotlin", "MVVM", "Room DB", "Firebase", "Supabase", "Compose"],
+        stack: [
+            { name: "Kotlin", icon: "https://cdn.simpleicons.org/kotlin/7F52FF" },
+            { name: "MVVM", icon: "https://cdn.simpleicons.org/android/3DDC84" },
+            { name: "Room DB", icon: "https://cdn.simpleicons.org/sqlite/003B57" },
+            { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase/FFCA28" },
+            { name: "Supabase", icon: "https://cdn.simpleicons.org/supabase/3ECF8E" },
+            { name: "Compose", icon: "https://cdn.simpleicons.org/jetpackcompose/4285F4" },
+        ],
     },
     {
         label: "Backend Frameworks",
         depth: "API delivery",
-        stack: ["Spring Boot", "FastAPI", "Node.js", "Express", "REST", "GraphQL"],
+        stack: [
+            { name: "Spring Boot", icon: "https://cdn.simpleicons.org/springboot/6DB33F" },
+            { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+            { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
+            { name: "Express", icon: "https://cdn.simpleicons.org/express/000000" },
+            { name: "REST", icon: "https://cdn.simpleicons.org/openapiinitiative/6BA539" },
+            { name: "GraphQL", icon: "https://cdn.simpleicons.org/graphql/E10098" },
+        ],
     },
     {
         label: "ML Tooling",
         depth: "Edge + research",
-        stack: ["TensorFlow Lite", "Google Colab", "Keras", "OpenCV", "SciKit", "Vision AI"],
+        stack: [
+            { name: "TensorFlow Lite", icon: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
+            { name: "Google Colab", icon: "https://cdn.simpleicons.org/googlecolab/F9AB00" },
+            { name: "Keras", icon: "https://cdn.simpleicons.org/keras/D00000" },
+            { name: "OpenCV", icon: "https://cdn.simpleicons.org/opencv/5C3EE8" },
+            { name: "SciKit", icon: "https://cdn.simpleicons.org/scikitlearn/F7931E" },
+            { name: "Vision AI", icon: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+        ],
     },
 ];
 
@@ -69,8 +97,8 @@ const projects = [
     {
         title: "Cognify",
         description: "Brain-training experience with adaptive levels, heatmaps, and real-time analytics dashboards.",
-        impact: "NPS 72",
-        tags: ["Remix", "Supabase", "D3"],
+        impact: "Featured in Innotech 2025",
+        tags: ["Kotlin", "Jetpack Compose"," Firebase"],
         link: "https://github.com/rookiecoder910/Cognify",
         tier: "medium",
     },
@@ -137,7 +165,17 @@ function mountSkills() {
                 <span class="tagline">${skill.label}</span>
                 <strong>${skill.depth}</strong>
                 <ul class="skill-stack">
-                    ${skill.stack.map((item) => `<li>${item}</li>`).join("")}
+                    ${skill.stack
+                        .map((item) => {
+                            if (typeof item === "string") {
+                                return `<li>${item}</li>`;
+                            }
+                            const icon = item.icon
+                                ? `<img class="stack-icon" src="${item.icon}" alt="${item.name} logo" loading="lazy">`
+                                : "";
+                            return `<li>${icon}<span>${item.name}</span></li>`;
+                        })
+                        .join("")}
                 </ul>
             </div>
         `
@@ -148,14 +186,13 @@ function mountSkills() {
 function projectTemplate(project) {
     return `
         <article class="project-card fade-in">
-            <span class="badge">${project.tier === "high" ? "High impact" : "Shipped"}</span>
             <h3>${project.title}</h3>
             <p class="text-slate-300">${project.description}</p>
             <p class="text-sm text-slate-400 mt-3">${project.impact}</p>
             <div class="project-meta mt-4">
                 ${project.tags.map((tag) => `<span>#${tag}</span>`).join("")}
             </div>
-            <a href="${project.link}" class="btn-link mt-6 inline-flex" target="_blank" rel="noreferrer">View case study</a>
+            <a href="${project.link}" class="btn-link mt-6 inline-flex" target="_blank" rel="noopener noreferrer">View GitHub repo</a>
         </article>
     `;
 }

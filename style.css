@@ -82,24 +82,149 @@ body.light .glow {
     z-index: 1;
 }
 
+.nav-shell {
+    width: 100%;
+    border-radius: 1001px;
+    padding: 0.6rem 1.25rem;
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 30px 60px rgba(2, 6, 23, 0.55);
+}
+
+.nav-brand {
+    font-family: "Clash Display", serif;
+    letter-spacing: 0.35em;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    color: #f8fafc;
+}
+
+.nav-links a {
+    position: relative;
+    color: #cbd5f5;
+    transition: color 200ms ease;
+    padding-bottom: 0.4rem;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #5eead4, #fb923c);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(94, 234, 212, 0.35);
+    background: rgba(94, 234, 212, 0.12);
+    box-shadow: 0 15px 30px rgba(94, 234, 212, 0.25);
+}
+
+.hero-title {
+    font-family: "Clash Display", serif;
+    font-size: clamp(2.5rem, 8vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f8fafc;
+}
+
+.text-glow {
+    background: linear-gradient(120deg, #5eead4, #facc15, #fb923c);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 15px 30px rgba(251, 146, 60, 0.35);
+}
+
+.hero-subhead {
+    font-size: 1.15rem;
+    color: #cbd5f5;
+    max-width: 55ch;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.metric-card {
+    position: relative;
+    border-radius: 22px;
+    padding: 1.4rem 1.7rem;
+    border: 1px solid rgba(94, 234, 212, 0.15);
+    background: rgba(2, 6, 23, 0.6);
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(94, 234, 212, 0.4), transparent 60%);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.metric-card:hover::before {
+    opacity: 1;
+}
+
+.metric-card dt {
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.metric-card dd {
+    margin-top: 0.4rem;
+    font-family: "Clash Display", serif;
+    font-size: 2.7rem;
+    color: #f8fafc;
+}
+
 .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.9rem 1.6rem;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-two));
+    background: linear-gradient(120deg, #5eead4, #22d3ee, #fb923c, #f97316);
+    background-size: 220% 220%;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: #020617;
     font-weight: 600;
-    transition: transform 200ms ease, box-shadow 200ms ease;
-    box-shadow: 0 15px 30px rgba(94, 234, 212, 0.25);
+    transition: transform 220ms ease, box-shadow 200ms ease, background-position 300ms ease;
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6);
+    animation: gradientPulse 14s ease infinite;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.01);
+    transform: translateY(-3px) scale(1.02);
+    background-position: 100% 50%;
 }
 
 .btn-ghost {
@@ -128,6 +253,35 @@ body.light nav a,
 body.light #themeToggle {
     color: #1e293b;
     border-color: rgba(15, 23, 42, 0.15);
+}
+
+body.light .nav-shell {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light .nav-brand,
+body.light .nav-links a {
+    color: #0f172a;
+}
+
+body.light .hero-pill {
+    background: rgba(148, 163, 184, 0.18);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.light .hero-subhead {
+    color: #0f172a;
+}
+
+body.light .metric-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light .metric-card dd {
+    color: #0f172a;
 }
 
 .card {
@@ -175,6 +329,16 @@ body.light .eyebrow {
     gap: 2.5rem;
 }
 
+body.light .timeline {
+    border-left-color: rgba(100, 116, 139, 0.4);
+}
+
+body.light .timeline li::before {
+    border-color: #f8fafc;
+    background: #0f172a;
+    box-shadow: 0 0 0 6px rgba(148, 163, 184, 0.25);
+}
+
 .timeline li {
     position: relative;
     list-style: none;
@@ -220,11 +384,20 @@ body.light .eyebrow {
 }
 
 .skill-stack li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     border-radius: 12px;
     border: 1px solid rgba(148, 163, 184, 0.4);
     padding: 0.3rem 0.75rem;
     font-size: 0.85rem;
     color: #e2e8f0;
+}
+
+.stack-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    object-fit: contain;
 }
 
 .open-source-list {
@@ -272,6 +445,10 @@ body.light .eyebrow {
     background: linear-gradient(135deg, rgba(94, 234, 212, 0.1), transparent 60%);
     opacity: 0;
     transition: opacity 250ms ease;
+}
+
+body.light .project-card::after {
+    background: linear-gradient(135deg, rgba(94, 234, 212, 0.25), transparent 60%);
 }
 
 .project-card:hover::after {
@@ -566,6 +743,18 @@ body.light .footer-link:hover {
 body.light .badge {
     border-color: rgba(15, 23, 42, 0.1);
     color: #0f172a;
+}
+
+@keyframes gradientPulse {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @media (max-width: 768px) {
