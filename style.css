@@ -124,6 +124,12 @@ body.light .glow {
     color: var(--accent);
 }
 
+body.light nav a,
+body.light #themeToggle {
+    color: #1e293b;
+    border-color: rgba(15, 23, 42, 0.15);
+}
+
 .card {
     border-radius: 24px;
     background: rgba(15, 23, 42, 0.7);
@@ -147,6 +153,10 @@ body.light .glow {
     letter-spacing: 0.4em;
     font-size: 0.75rem;
     color: var(--text-muted);
+}
+
+body.light .eyebrow {
+    color: #94a3b8;
 }
 
 .section-title {
