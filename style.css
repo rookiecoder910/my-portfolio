@@ -36,7 +36,13 @@ body.light {
 }
 
 body.light .grain {
-    opacity: 0.03;
+    opacity: 0.08;
+    mix-blend-mode: normal;
+}
+
+body.light .glow {
+    opacity: 0.12;
+    filter: blur(140px);
 }
 
 .grain {
@@ -192,6 +198,46 @@ body.light .grain {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+}
+
+.skill-stack {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    margin: 0.2rem 0 0;
+}
+
+.skill-stack li {
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+}
+
+.open-source-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.4rem;
+}
+
+.open-source-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.open-source-list strong {
+    font-family: "Clash Display", serif;
+    font-size: 1.1rem;
+}
+
+.open-source-list span {
+    color: var(--text-muted);
 }
 
 .project-grid {
@@ -416,9 +462,100 @@ body.light .card-highlight {
     border-color: rgba(15, 23, 42, 0.08);
 }
 
+body.light .cta-panel {
+    background: linear-gradient(135deg, rgba(94, 234, 212, 0.35), rgba(255, 255, 255, 0.95));
+    box-shadow: 0 20px 45px rgba(148, 163, 184, 0.35);
+}
+
 body.light .form-input {
     background: rgba(255, 255, 255, 0.9);
     color: #020617;
+}
+
+body.light .btn-ghost {
+    border-color: rgba(15, 23, 42, 0.25);
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+body.light .btn-ghost:hover {
+    background: rgba(15, 23, 42, 0.08);
+}
+
+body.light .btn-link {
+    color: #0f172a;
+}
+
+body.light .section-title,
+body.light h1,
+body.light h2,
+body.light h3 {
+    color: #0b1120;
+}
+
+body.light .text-slate-300 {
+    color: #475569 !important;
+}
+
+body.light .text-slate-400 {
+    color: #64748b !important;
+}
+
+body.light .card-highlight {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light .chip-list li {
+    background: rgba(226, 232, 240, 0.7);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.light .skill-chip {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light .skill-stack li {
+    background: rgba(226, 232, 240, 0.8);
+    color: #0f172a;
+    border-color: rgba(15, 23, 42, 0.1);
+}
+
+body.light .open-source-list span {
+    color: #475569;
+}
+
+body.light .project-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+body.light .app-card {
+    background: rgba(248, 250, 252, 0.9);
+}
+
+body.light .profile-frame {
+    background: linear-gradient(145deg, rgba(94, 234, 212, 0.2), rgba(255, 255, 255, 0.85));
+    box-shadow: 0 25px 55px rgba(100, 116, 139, 0.35);
+}
+
+body.light #focusList li {
+    border-bottom-color: rgba(100, 116, 139, 0.25);
+}
+
+body.light .footer-link {
+    color: #475569;
+}
+
+body.light .footer-link:hover {
+    color: #0f172a;
+}
+
+body.light .badge {
+    border-color: rgba(15, 23, 42, 0.1);
+    color: #0f172a;
 }
 
 @media (max-width: 768px) {

@@ -19,10 +19,26 @@ const experiences = [
 ];
 
 const skills = [
-    { label: "Languages", stack: "TypeScript, Kotlin, Java, Python", depth: "8+ yrs" },
-    { label: "Frameworks", stack: "React, Next.js, Jetpack, Tailwind", depth: "Design/dev" },
-    { label: "Cloud", stack: "Firebase, Supabase, Azure, Vercel", depth: "Certified" },
-    { label: "Practices", stack: "Product discovery, OKRs, lighthouse audits", depth: "Lead" },
+    {
+        label: "Languages",
+        depth: "Polyglot systems",
+        stack: ["C", "C++", "Python", "JavaScript", "Java", "Kotlin"],
+    },
+    {
+        label: "Android & SaaS",
+        depth: "App architecture",
+        stack: ["Kotlin", "MVVM", "Room DB", "Firebase", "Supabase", "Compose"],
+    },
+    {
+        label: "Backend Frameworks",
+        depth: "API delivery",
+        stack: ["Spring Boot", "FastAPI", "Node.js", "Express", "REST", "GraphQL"],
+    },
+    {
+        label: "ML Tooling",
+        depth: "Edge + research",
+        stack: ["TensorFlow Lite", "Google Colab", "Keras", "OpenCV", "SciKit", "Vision AI"],
+    },
 ];
 
 const projects = [
@@ -119,8 +135,10 @@ function mountSkills() {
             (skill) => `
             <div class="skill-chip fade-in">
                 <span class="tagline">${skill.label}</span>
-                <strong>${skill.stack}</strong>
-                <span class="text-sm text-slate-400">Depth: ${skill.depth}</span>
+                <strong>${skill.depth}</strong>
+                <ul class="skill-stack">
+                    ${skill.stack.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
             </div>
         `
         )
