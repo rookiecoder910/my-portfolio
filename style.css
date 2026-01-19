@@ -10,6 +10,17 @@
     box-sizing: border-box;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 body {
     min-height: 100vh;
     background: radial-gradient(circle at top, rgba(94, 234, 212, 0.2), transparent 40%),
@@ -267,6 +278,53 @@ body.light .grain {
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
+}
+
+.chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.chip-list li {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    color: #e2e8f0;
+    background: rgba(15, 23, 42, 0.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #cbd5f5;
+    transition: color 200ms ease, transform 200ms ease;
+}
+
+.footer-link:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.footer-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: currentColor;
+    opacity: 0.85;
 }
 
 #focusList li {
