@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Product & Mobile Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Clash Display"', 'serif'],
+                        body: ['"Space Grotesk"', 'sans-serif']
+                    },
+                    colors: {
+                        night: '#05060a',
+                        accent: '#5EEAD4',
+                        punch: '#FF7A18'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-night text-slate-100 font-body">
+    <div class="grain"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="relative">
+        <header class="max-w-6xl mx-auto px-6 pt-8 pb-4">
+            <nav class="flex flex-wrap items-center justify-between gap-4">
+                <a class="font-display tracking-[0.2em] text-sm text-slate-300 uppercase" href="#hero">Manas Portfolio</a>
+                <div class="flex flex-wrap items-center gap-6 text-sm uppercase tracking-widest text-slate-400">
+                    <a href="#about" class="hover:text-accent">About</a>
+                    <a href="#experience" class="hover:text-accent">Experience</a>
+                    <a href="#projects" class="hover:text-accent">Projects</a>
+                    <a href="#apps" class="hover:text-accent">Apps</a>
+                    <a href="#contact" class="hover:text-accent">Contact</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button id="themeToggle" class="rounded-full border border-white/20 px-4 py-2 text-xs tracking-widest uppercase">Light</button>
+                    <a href="#contact" class="btn-primary">Book Intro Call</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 space-y-32 pb-24" id="hero">
+            <section class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
+                <div class="space-y-8">
+                    <p class="text-xs uppercase tracking-[0.4em] text-slate-400">Product Engineer · Mobile · Cloud</p>
+                    <h1 class="text-4xl lg:text-6xl font-display leading-tight text-white">
+                        Shipping bold software that feels crafted, from whiteboard to published app.
+                    </h1>
+                    <p class="text-slate-300 text-lg">
+                        I design, build, and launch resilient products across web and Android. With a background in product strategy and mobile-first experiences, I turn ambiguous briefs into measurable releases.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="btn-primary">View Work</a>
+                        <a href="#apps" class="btn-ghost">APK Shelf</a>
+                        <a href="#apps" class="btn-link">Add new release →</a>
+                    </div>
+                    <dl class="grid grid-cols-2 gap-6">
+                        <div>
+                            <dt class="text-sm text-slate-400">Products shipped</dt>
+                            <dd class="text-3xl font-display">24</dd>
+                        </div>
+                        <div>
+                            <dt class="text-sm text-slate-400">Users impacted</dt>
+                            <dd class="text-3xl font-display">1.1M+</dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="space-y-6">
+                    <figure class="profile-frame fade-in">
+                        <img src="heaven.jpeg" alt="Portrait of Manas" class="profile-photo">
+                        <figcaption class="sr-only">Product and mobile engineer Manas</figcaption>
+                    </figure>
+                    <div class="card glass p-8 space-y-8">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Now focusing on</p>
+                            <p class="text-2xl font-display">AI-assisted mobility, offline-first apps, and delightful product onboarding.</p>
+                        </div>
+                        <ul class="space-y-3" id="focusList"></ul>
+                        <div class="border-t border-white/10 pt-6">
+                            <p class="text-sm text-slate-400">Available for</p>
+                            <p class="text-lg font-display">Early-stage product partnerships · Contract leadership · Technical audits</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="grid gap-10 lg:grid-cols-2 items-start">
+                <div class="space-y-6">
+                    <p class="eyebrow">Profile</p>
+                    <h2 class="section-title">Strategy + Design + Engineering</h2>
+                    <p class="text-lg text-slate-300">
+                        From startup MVPs to enterprise-scale rollouts, I own the product surface end-to-end: discovery workshops, design systems, architecture, analytics loops, and GTM playbooks.
+                    </p>
+                </div>
+                <div class="grid gap-4">
+                    <div class="card-highlight">
+                        <p class="text-sm text-slate-400">Signature strengths</p>
+                        <p class="text-lg">Product strategy, Kotlin/Java for Android, React/Tailwind frontends, CI/CD pipelines, Firebase/Azure integrations.</p>
+                    </div>
+                    <div class="card-highlight">
+                        <p class="text-sm text-slate-400">What teams say</p>
+                        <p class="text-lg">“Manas pairs aesthetic polish with ruthless execution speed. Roadmaps stay on track because he keeps cross-functional loops tight.”</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="space-y-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="eyebrow">Experience</p>
+                        <h2 class="section-title">Road-tested delivery</h2>
+                    </div>
+                    <a href="#" class="btn-link">Download resume PDF</a>
+                </div>
+                <ol id="experienceTimeline" class="timeline"></ol>
+            </section>
+
+            <section id="skills" class="space-y-8">
+                <div class="flex items-center justify-between flex-wrap gap-6">
+                    <div>
+                        <p class="eyebrow">Capabilities</p>
+                        <h2 class="section-title">Tooling & tech I deploy</h2>
+                    </div>
+                    <div class="flex gap-3 text-sm text-slate-400">
+                        <span>Cloud native</span>
+                        <span>Design systems</span>
+                        <span>Accessibility</span>
+                    </div>
+                </div>
+                <div id="skillsList" class="skills-grid"></div>
+            </section>
+
+            <section id="projects" class="space-y-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="eyebrow">Selected Work</p>
+                        <h2 class="section-title">Case studies & experiments</h2>
+                    </div>
+                    <button id="projectFilter" class="btn-ghost">Filter by impact</button>
+                </div>
+                <div id="projectGallery" class="project-grid"></div>
+            </section>
+
+            <section id="apps" class="space-y-8">
+                <div class="flex items-center justify-between flex-wrap gap-6">
+                    <div>
+                        <p class="eyebrow">App Shelf</p>
+                        <h2 class="section-title">APK links & release notes</h2>
+                    </div>
+                    <a href="#apps" class="btn-primary">Submit new APK</a>
+                </div>
+                <div id="appShelf" class="app-grid"></div>
+            </section>
+
+            <section class="cta-panel" id="cta">
+                <div class="space-y-4">
+                    <p class="eyebrow">Advisory & Sprint Zero</p>
+                    <h2 class="text-3xl font-display">Need a strategic partner for your next launch?</h2>
+                    <p class="text-slate-300 max-w-2xl">I offer design-led audits, feature accelerators, and embedded build teams. Slide in the deck, share metrics, and we will shape a delivery plan within 72 hours.</p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="btn-primary">Start a sprint</a>
+                    <a href="mailto:hello@example.com" class="btn-ghost">Send brief</a>
+                </div>
+            </section>
+
+            <section id="contact" class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+                <div class="space-y-6">
+                    <p class="eyebrow">Contact</p>
+                    <h2 class="section-title">Let’s build together</h2>
+                    <p class="text-slate-300">Share your goals, target metrics, or a quick Loom. I respond within a day with next steps.</p>
+                    <div class="space-y-3 text-sm text-slate-400">
+                        <p>Based in Bengaluru · Working globally</p>
+                        <p>Email: hello@example.com</p>
+                        <p>Calendly: calendly.com/your-handle</p>
+                    </div>
+                </div>
+                <form class="card glass p-8 space-y-6" id="contactForm">
+                    <div>
+                        <label class="form-label" for="name">Name</label>
+                        <input class="form-input" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="email">Email</label>
+                        <input class="form-input" id="email" name="email" type="email" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="budget">Budget range</label>
+                        <select id="budget" name="budget" class="form-input">
+                            <option>Exploring</option>
+                            <option>$2k - $5k</option>
+                            <option>$5k - $15k</option>
+                            <option>$15k+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label" for="message">Project context</label>
+                        <textarea class="form-input" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Send project brief</button>
+                    <p id="formStatus" class="text-xs text-slate-400"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="max-w-6xl mx-auto px-6 pb-12 text-xs text-slate-500 flex flex-wrap gap-4 justify-between">
+            <p>© <span id="year"></span> Manas. Built with custom design direction + Tailwind CSS.</p>
+            <div class="flex gap-3">
+                <a href="https://github.com/" class="hover:text-accent">GitHub</a>
+                <a href="https://www.linkedin.com/" class="hover:text-accent">LinkedIn</a>
+                <a href="https://dribbble.com/" class="hover:text-accent">Dribbble</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="folio.js" defer></script>
+</body>
+</html>
