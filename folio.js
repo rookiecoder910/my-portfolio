@@ -185,14 +185,14 @@ function mountSkills() {
 
 function projectTemplate(project) {
     return `
-        <article class="project-card fade-in">
+        <article class="project-card fade-in" data-link="${project.link}" tabindex="0" role="link" aria-label="View ${project.title} on GitHub">
             <h3>${project.title}</h3>
             <p class="text-slate-300">${project.description}</p>
             <p class="text-sm text-slate-400 mt-3">${project.impact}</p>
             <div class="project-meta mt-4">
                 ${project.tags.map((tag) => `<span>#${tag}</span>`).join("")}
             </div>
-            <a href="${project.link}" class="btn-link mt-6 inline-flex" target="_blank" rel="noopener noreferrer">View GitHub repo</a>
+            <button type="button" class="btn-link mt-6 inline-flex">View GitHub repo</button>
         </article>
     `;
 }
@@ -201,6 +201,40 @@ function mountProjects() {
     const gallery = qs("#projectGallery");
     const filtered = state.highImpactOnly ? projects.filter((p) => p.tier === "high") : projects;
     gallery.innerHTML = filtered.map(projectTemplate).join("");
+}
+
+function bindProjectGalleryRouter() {
+    const gallery = qs("#projectGallery");
+    if (!gallery || gallery.dataset.routerBound === "true") {
+        return;
+    }
+
+    const openLink = (url) => {
+        if (!url) return;
+        window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+    gallery.addEventListener("click", (event) => {
+        const card = event.target.closest(".project-card");
+        if (!card) {
+            return;
+        }
+        openLink(card.dataset.link);
+    });
+
+    gallery.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+            return;
+        }
+        const card = event.target.closest(".project-card");
+        if (!card || event.target !== card) {
+            return;
+        }
+        event.preventDefault();
+        openLink(card.dataset.link);
+    });
+
+    gallery.dataset.routerBound = "true";
 }
 
 function mountApps() {
@@ -284,6 +318,7 @@ function init() {
     mountTimeline();
     mountSkills();
     mountProjects();
+    bindProjectGalleryRouter();
     mountApps();
     bindProjectFilter();
     bindThemeToggle();
