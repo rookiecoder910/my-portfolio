@@ -241,6 +241,53 @@ function bindThemeToggle() {
     });
 }
 
+function bindNavToggle() {
+    const nav = document.querySelector(".nav-shell");
+    const toggle = qs("#navToggle");
+    const navContent = qs("#navContent");
+
+    if (!nav || !toggle || !navContent) {
+        return;
+    }
+
+    nav.classList.add("js-enabled");
+
+    const setAriaState = (isOpen, forceVisible = false) => {
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        if (forceVisible) {
+            navContent.setAttribute("aria-hidden", "false");
+        } else {
+            navContent.setAttribute("aria-hidden", String(!isOpen));
+        }
+    };
+
+    toggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("is-open");
+        setAriaState(open);
+    });
+
+    navContent.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth < 1024 && nav.classList.contains("is-open")) {
+                nav.classList.remove("is-open");
+                setAriaState(false);
+            }
+        });
+    });
+
+    const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+            nav.classList.remove("is-open");
+            setAriaState(false, true);
+        } else {
+            setAriaState(nav.classList.contains("is-open"));
+        }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+}
+
 function bindContactForm() {
     const form = qs("#contactForm");
     const status = qs("#formStatus");
@@ -287,6 +334,7 @@ function init() {
     mountApps();
     bindProjectFilter();
     bindThemeToggle();
+    bindNavToggle();
     bindContactForm();
     updateYear();
     observeFadeIns();
