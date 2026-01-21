@@ -10,7 +10,7 @@ The website is deployed using **GitHub Pages**.
 
 ## 🚀 Features
 
-- 🎨 Clean and modern UI
+- 🎨 Clean and modern UI.....
 - 📱 Fully responsive design (mobile & desktop)
 - 🧩 Interactive sections using JavaScript
 - 🧑‍💻 About Me & Skills showcase
