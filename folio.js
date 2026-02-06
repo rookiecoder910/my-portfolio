@@ -91,7 +91,7 @@ const projects = [
         description: "CNN-powered detector that flags crop diseases using on-device inference for farmers.",
         impact: "NASA Space Apps prototype finalist",
         tags: ["Python", "TensorFlow", "FastAPI", "Kotlin"],
-        link: "https://github.com/rookiecoder910/Crop-Disease-Detector-",
+        link: "https://github.com/rookiecoder910/cropsense",
         tier: "medium",
     },
     {
