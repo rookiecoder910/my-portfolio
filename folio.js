@@ -102,6 +102,14 @@ const projects = [
         link: "https://github.com/rookiecoder910/Cognify",
         tier: "medium",
     },
+    {
+        title: "ShopIt",
+        description: "Feature-rich e-commerce Android app with seamless shopping experience, cart management, and secure checkout.",
+        impact: "End-to-end shopping solution",
+        tags: ["Kotlin", "Android", "E-commerce"],
+        link: "https://github.com/rookiecoder910/ShopIt",
+        tier: "medium",
+    },
 ];
 
 const apps = [
@@ -128,6 +136,14 @@ const apps = [
         notes: "Chat-assisted medication tracker with refill nudges and caregiver reports.",
         apk: "https://drive.google.com/file/d/1n_kOk4AW1W4TfgVGL-Hr5Fl3ajM1dkqU/view?usp=sharing",
         size: "44 MB",
+    },
+    {
+        name: "ShopIt",
+        version: "v1.0.0",
+        platform: "Android",
+        notes: "E-commerce app with intuitive shopping experience, cart management, and secure checkout flow.",
+        apk: "https://drive.google.com/file/d/1eUNvZdKOY8FAjmz73wXElkm3Apm_QqCw/view?usp=sharing",
+        size: "35 MB",
     },
 ];
 
