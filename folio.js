@@ -10,12 +10,23 @@ const focusAreas = [
 
 const experiences = [
     {
-        company: "Coding Samurai",
-        title: "App developer Project Based Intern",
-        timeframe: "Oct 2025-Nov 2025",
-        impact: "Learned to build MVVM apps with Jetpack Compose",
+        company: "ShortOrbit Technologies — DRDO Delhi Campus",
+        title: "Electronics & Software Engineering Intern",
+        timeframe: "Mar 2026 – Sep 2026",
+        impact: "Selected for 6-month paid internship on a confidential defense-grade client project at DRDO. Working on embedded systems and software integration in a professional lab environment.",
     },
-   
+    {
+        company: "Coding Samurai",
+        title: "Android Developer Intern",
+        timeframe: "Oct 2025 – Nov 2025",
+        impact: "Built 3+ production-ready Android apps with Kotlin, Jetpack Compose, Firebase Auth & Firestore. Implemented Hilt DI, Retrofit APIs, and Material 3 UIs in agile multi-module architecture.",
+    },
+    {
+        company: "Deloitte Australia · GIH Hackathon 2025",
+        title: "Cybersecurity Virtual Intern · Hackathon Finalist",
+        timeframe: "2025",
+        impact: "Threat modeling & vulnerability analysis via OWASP Top 10; scored 99% in Palo Alto Networks cert. Finalist at GIH 2025 — built eMediBot in 36 hours, selected from 120+ teams; shipped 7+ hackathon prototypes.",
+    },
 ];
 
 const skills = [
@@ -79,26 +90,34 @@ const projects = [
         tier: "high",
     },
     {
-        title: "Emedibot",
-        description: "AI health aide that tracks doses, schedules reminders, and surfaces med insights via Gemini.",
-        impact: "100+ daily active users",
-        tags: ["Kotlin", "Jetpack Compose", "Firebase", "Gemini"],
+        title: "eMediBot",
+        description: "GIH Hackathon 2025 Finalist — end-to-end app built in 36 hours. Firebase Realtime DB, Google Sign-In, Material 3 with Gemini API chatbot for medication queries and clean MVVM architecture.",
+        impact: "GIH 2025 Finalist · Selected from 120+ teams",
+        tags: ["Kotlin", "Jetpack Compose", "Firebase", "Gemini API"],
         link: "https://github.com/rookiecoder910/emedibot",
-        tier: "medium",
+        tier: "high",
     },
     {
-        title: "Crop Sense",
-        description: "CNN-powered detector that flags crop diseases using on-device inference for farmers.",
-        impact: "NASA Space Apps prototype finalist",
-        tags: ["Python", "TensorFlow", "FastAPI", "Kotlin"],
+        title: "CropSense",
+        description: "Full-stack crop disease detection system. Trained CNN on TensorFlow achieving 95%+ accuracy across 38+ diseases on PlantVillage dataset. Jetpack Compose frontend + FastAPI backend with sub-second inference.",
+        impact: "95%+ accuracy · 38+ disease classes",
+        tags: ["Kotlin", "FastAPI", "TensorFlow", "CNN"],
         link: "https://github.com/rookiecoder910/cropsense",
-        tier: "medium",
+        tier: "high",
+    },
+    {
+        title: "MEDILEDGER",
+        description: "Final Year Project — decentralized EHR on blockchain with patient-controlled access and IPFS storage. Co-authored research paper currently under review.",
+        impact: "Research paper under review · Final Year Project",
+        tags: ["Node.js", "Solidity", "IPFS", "React"],
+        link: "https://github.com/rookiecoder910/mediledger",
+        tier: "high",
     },
     {
         title: "Cognify",
         description: "Brain-training experience with adaptive levels, heatmaps, and real-time analytics dashboards.",
         impact: "Featured in Innotech 2025",
-        tags: ["Kotlin", "Jetpack Compose"," Firebase"],
+        tags: ["Kotlin", "Jetpack Compose", "Firebase"],
         link: "https://github.com/rookiecoder910/Cognify",
         tier: "medium",
     },
